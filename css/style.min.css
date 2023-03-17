@@ -6656,8 +6656,9 @@ html,
   z-index: 5;
 }
 .how-work__item__list__item__title .lineInvis1.left {
-  left: -56px;
-  bottom: -8px;
+  left: -36px;
+  bottom: 12px;
+  width: 210px;
 }
 .how-work__item__list__item__title .lineInvis1.right {
   right: -60px;
