@@ -1017,7 +1017,7 @@
 }
 
 .linkMobile{
-    display: none!important;
+    // display: none!important;
 }
 
 
@@ -1280,16 +1280,16 @@
         .lineInvis2{
             &.right{
                 transform: scale(-1, 1);
-                bottom: 219px;
+                bottom: 234px;
                 width: 120px;
                 left: -22px;
             }
 
             &.left{
                 transform: scale(-1, 1);
-                bottom: -174px;
-                width: 130px;
-                right: -22px;
+                bottom: -214px;
+                width: 140px;
+                right: -28px;
             }
         }
     }
@@ -1338,14 +1338,14 @@
 
         .lineInvis2{
             &.right{
-                bottom: 259px;
-               
+                bottom: 252px;
+                left: -30px;               
             }
 
             &.left{
                 bottom: -224px;
-                width: 136px;
-                right: -36px;
+                width: 137px;
+                right: -40px;
             }
         }
     }
@@ -1359,6 +1359,12 @@
                 margin: 0 3px;       
             
             }
+        }
+    }
+
+    #how-item_2{
+        .how-work__item__list{
+            margin-bottom: 0!important;
         }
     }
 }
