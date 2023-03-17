@@ -1168,6 +1168,21 @@
          }
     }
 
+    #what_do_block{
+        overflow: hidden;
+    }
+
+    .liper {
+        .what-do__item{
+            overflow: visible;
+        }
+        .what-do__item__title{
+            width: calc(100% + 30px);
+            left: -15px;
+            position: relative;
+        }
+    }
+
    
 }
 

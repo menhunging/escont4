@@ -6943,6 +6943,17 @@ html,
     background-repeat: no-repeat;
     display: block;
   }
+  #what_do_block {
+    overflow: hidden;
+  }
+  .liper .what-do__item {
+    overflow: visible;
+  }
+  .liper .what-do__item__title {
+    width: calc(100% + 30px);
+    left: -15px;
+    position: relative;
+  }
 }
 @media (max-width: 700px) {
   .how_work_block {
