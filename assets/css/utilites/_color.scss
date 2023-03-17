@@ -1,0 +1,6 @@
+@each $key,
+$value in $background-color-map {
+    .#{$class-site-wrap} .bg-#{$key} {
+        background-color: $value;
+    }
+}

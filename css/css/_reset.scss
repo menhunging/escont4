@@ -1,0 +1,36 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.#{$class-site-wrap} * {
+    box-sizing: border-box;
+    line-height: $default-line-height;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+
+.#{$class-show}.d-none.not-default-animation,
+.#{$class-show}.not-default-animation {
+    display: block;
+}
+
+.#{$class-site-wrap} code {
+    background-color: #2d323e;
+    border-radius: 5px;
+    padding: 0.2em 0.6em;
+    word-break: break-word;
+    color: $color-main-hover;
+    font-size: 0.95em;
+    transition: 0.6s;
+
+    &:hover {
+        cursor: pointer;
+        color: red;
+    }
+}

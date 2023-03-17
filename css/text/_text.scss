@@ -1,0 +1,196 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Light.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-SemiBold.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Medium.woff') format('woff');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+
+html,
+.#{$class-site-wrap} {
+    font-size: $t_size_m;
+    font-family: 'Montserrat';
+}
+
+@media (max-width: $w-m) {
+    .#{$class-site-wrap} {
+        font-size: $t_size_m__mobile;
+    }
+}
+
+.#{$class-site-wrap} h1,
+.#{$class-site-wrap} .fake-h1,
+.#{$class-site-wrap} h2,
+.#{$class-site-wrap} .fake-h2,
+.#{$class-site-wrap} h3,
+.#{$class-site-wrap} .fake-h3,
+.#{$class-site-wrap} h4,
+.#{$class-site-wrap} .fake-h4 {
+    font-weight: 600;
+    color: $color-text;
+    margin: 0.3em 0 0.5em 0;
+}
+
+.#{$class-site-wrap} h1,
+.#{$class-site-wrap} .fake-h1 {
+    font-size: 2.25em;
+    font-family: 'Montserrat';
+    line-height: 1;
+    font-weight: 600;
+
+    @media (max-width: $w-m) {
+        font-size: 2em;
+    }
+
+}
+
+.#{$class-site-wrap} h2,
+.#{$class-site-wrap} .fake-h2 {
+    font-size: 2em;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+
+
+    @media (max-width: $w-m) {
+        font-size: 1.8em;
+    }
+}
+
+.#{$class-site-wrap} h3,
+.#{$class-site-wrap} .fake-h3 {
+    font-size: 1.5em;
+    font-family: 'Montserrat';
+    font-weight: 400;
+
+    @media (max-width: $w-m) {
+        font-size: 1.5em;
+    }
+}
+
+.#{$class-site-wrap} h3,
+.#{$class-site-wrap} .fake-h3 {
+    margin-bottom: 0.5em;
+}
+
+.#{$class-site-wrap} h4,
+.#{$class-site-wrap} .fake-h4 {
+    margin-bottom: 1em;
+}
+
+.#{$class-site-wrap} li {
+    & li {
+        font-size: 0.95em;
+    }
+}
+
+.#{$class-site-wrap} a:not([class]) {
+    color: $color-main;
+
+    &:hover {
+        color: $color-main-hover;
+    }
+}
+
+.#{$class-site-wrap} p {
+    margin-bottom: 0.8em;
+    line-height: $text-line-height;
+    font-weight: 300;
+
+    strong{
+        font-weight: 500;
+    }
+
+    b{
+        font-weight: 500;
+    }
+}
+
+.#{$class-site-wrap} button,
+.#{$class-site-wrap} a {
+    cursor: pointer;
+}
+
+.#{$class-site-wrap} hr {
+    background-color: $color-grey;
+    opacity: 0.5;
+    height: 0.5px;
+}
+
+.#{$class-site-wrap} q {
+    font-style: italic;
+    padding: 1em;
+    background-color: $color-grey-light;
+    margin: 1.1em 0;
+    display: block;
+}
+
+
+.#{$class-site-wrap} ul,
+.#{$class-site-wrap} ol {
+    padding-left: 1.1em
+}
+
+.#{$class-site-wrap} li {
+    margin: 0.5em 0;
+    list-style: none;
+    position: relative;
+
+    &:not([class]) {
+        &::before {
+            content: '';
+            color: $color-main;
+            margin-right: 0.5em;
+            display: inline-block;
+            margin-left: -0.7em;
+            width: 0.5em;
+            height: 0.5em;
+            background-color: $color-main;
+            border-radius: 100%;
+            line-height: 0;
+
+        }
+    }
+}
+
+.#{$class-site-wrap} .#{$class-default-table-wrap} table {
+
+    & th {
+        padding: 1em;
+    }
+
+    & td {
+        padding: 1em;
+    }
+}
+
+@import '_text__mode.scss';

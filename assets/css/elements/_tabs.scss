@@ -1,0 +1,59 @@
+.#{$class-site-wrap} .tabs {
+    font-size: 1rem;
+
+    &__btn {
+        font-size: 0.95em;
+        padding: 0.7em 1.3em;
+        text-decoration: none;
+        color: $color-text;
+        border: 1px solid $color-grey-light;
+        background-color: $color-grey-light;
+        transition: $default-transition;
+        cursor: pointer;
+        user-select: none;
+        display: inline-block;
+        text-align: center;
+        white-space: nowrap;
+        border-radius: 15px;
+        margin: 0 10px 20px 10px;
+        font-weight: 600;
+
+        @media (max-width: $w-m) {
+            font-size: 0.85;
+        }
+
+        & img {
+            margin-right: 5px;
+            height: 1.2em;
+
+
+        }
+
+        &:hover:not(.#{$class-disabled}) {
+            border-color: $color-main;
+            color: white;
+            background-color: $color-main;
+        }
+
+        &.#{$class-active} {
+            border-color: $color-main;
+            color: white;
+            background-color: $color-main;
+            cursor: default;
+        }
+
+        @include disabledClass
+    }
+
+    &__btn-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        overflow-x: auto;
+        padding-bottom: 0.5em;
+        margin: 0 -10px;
+    }
+
+    //&__item-wrap {}
+    //&__item {}
+    //&__content {}
+}

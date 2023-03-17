@@ -1,0 +1,92 @@
+.#{$class-site-wrap} .form-group__input {
+    &-text {
+        padding: 1.25em 1.5em;
+        outline: none;
+        background-color: white;
+        border-radius: 10px;
+        transition: 0.4s;
+        color: $color-text;
+        width: 100%;
+        max-width: 100%;
+        outline: 2px solid transparent;
+        outline-offset: -1px;
+        font-size: 1em;
+        font-weight: 500;
+        border: 1px solid $color-main;
+
+        &_white {
+            background-color: white;
+        }
+
+        &::placeholder {
+            color: $color-grey;
+        }
+
+        &:focus {
+            outline: 2px solid $color-main-hover;
+            background-color: white;
+        }
+
+
+        &.#{$class-success} {
+            background-color: $color-success-light;
+            border-color: $color-success;
+            color: $color-success;
+
+            &::placeholder {
+                color: $color-success;
+            }
+        }
+
+        &.#{$class-warning} {
+            background-color: $color-warning-light;
+            border-color: $color-warning;
+            color: $color-text;
+
+
+        }
+
+        &.#{$class-error} {
+            background-color: $color-error-light;
+            border-color: $color-error;
+            color: $color-error;
+
+            &::placeholder {
+                color: $color-error;
+            }
+
+        }
+
+        &.#{$class-disabled} {
+            background-color: $color-disablde-light;
+            border-color: $color-disabled;
+        }
+
+        &_transparent {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+
+            &::placeholder {
+                color: white;
+            }
+
+            &:focus {
+
+
+                background-color: white;
+                color: $color-grey;
+
+                &::placeholder {
+                    color: $color-grey;
+                }
+            }
+        }
+    }
+
+    &-checkbox,
+    &-radio {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+}

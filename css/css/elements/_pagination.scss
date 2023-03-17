@@ -1,0 +1,53 @@
+.#{$class-site-wrap} .#{$class-pagination} {
+    font-size: $pagination-size;
+
+    &__row {
+        margin: 0 -5px;
+        padding: 0;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        padding: 0 5px;
+
+        &__link {
+            text-decoration: none;
+            padding: 0.9em 1.2em;
+            color: $color-text;
+            transition: $default-transition;
+            cursor: pointer;
+            background-color: transparent;
+            user-select: none;
+            font-weight: 400;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 47px;
+            max-height: 47px;
+            width: 100%;
+            font-size: 0.9rem;
+
+            &_skip {
+                border: none;
+            }
+
+            &.#{$class-active} {
+                color: $color-main;
+                cursor: auto;
+                background-color: $color-main;
+                color: white;
+            }
+
+            &:hover:not(.#{$class-disabled}) {
+                color: white;
+                background-color: $color-main;
+
+            }
+
+            @include disabledClass;
+        }
+    }
+
+
+}

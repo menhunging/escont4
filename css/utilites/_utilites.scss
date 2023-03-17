@@ -1,0 +1,37 @@
+@import '_color.scss';
+
+.#{$class-site-wrap} .img-cover {
+    object-fit: cover;
+    object-position: center;
+}
+
+.#{$class-site-wrap} .ul-no-list {
+    list-style-type: none;
+}
+
+
+.#{$class-site-wrap} .stylish-link {
+
+    transition: $default-transition;
+    text-decoration: none;
+
+    &_black {
+        color: $color-text !important;
+
+        &.active {
+            color: $color-main !important;
+
+            &:hover {
+                color: $color-main-hover !important;
+            }
+        }
+    }
+
+    &:hover {
+        color: $color-main !important;
+    }
+}
+
+.bg-none {
+    background: transparent !important;
+}

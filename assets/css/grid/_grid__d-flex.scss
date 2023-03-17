@@ -1,0 +1,88 @@
+.d-flex_row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.d-flex_no-wrap {
+    flex-wrap: nowrap !important;
+}
+
+.#{$class-site-wrap} .d-flex_row {
+    &>[class*="col-"] {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@each $gap-media in $grid-gap-media-map {
+
+    @each $class,
+    $width in $grid-media-map {
+
+        @if $gap-media==$width {
+
+            @if $class==default {
+
+                @each $name,
+                $size in $grid-gap-list-map {
+                    .#{$class-site-wrap} .d-flex_row.#{$class-gap}-#{$name} {
+                        margin-left: calc(-#{$size} / 2);
+                        margin-right: calc(-#{$size} / 2);
+
+                        &>[class*="col-"] {
+                            padding: 0 calc($size / 2);
+                        }
+                    }
+                }
+            }
+
+            @else {
+
+                @media (min-width: $width) {
+
+                    @each $name,
+                    $size in $grid-gap-list-map {
+                        .#{$class-site-wrap} .d-flex_row.#{$class-gap}-#{$class}-#{$name} {
+                            margin-left: calc(-#{$size} / 2);
+                            margin-right: calc(-#{$size} / 2);
+
+                            &>[class*="col-"] {
+                                padding: 0 calc($size / 2);
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@each $class,
+$width in $grid-media-map {
+
+    // Default классы
+    @if $class==default {
+        @for $i from 1 through $col-amount {
+            .#{$class-site-wrap} .d-flex_row>.#{$class-column}-#{$i} {
+                max-width: calc(100% / $col-amount * $i);
+                width: 100%;
+            }
+        }
+    }
+
+    // Media классы
+    @else {
+        @media (min-width: $width) {
+            @for $i from 1 through $col-amount {
+                .#{$class-site-wrap} .d-flex_row>.#{$class-column}-#{$class}-#{$i} {
+                    max-width: calc(100% / $col-amount * $i);
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

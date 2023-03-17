@@ -1,0 +1,89 @@
+// Сетка grid
+@each $gap-media in $grid-gap-media-map {
+
+    @each $class,
+    $width in $grid-media-map {
+
+        @if $gap-media==$width {
+
+            @if $class==default {
+
+                @each $name,
+                $size in $grid-gap-list-map {
+                    .d-grid.#{$class-gap}-#{$name} {
+                        gap: #{$size};
+
+
+                    }
+                }
+            }
+
+            @else {
+                @media (min-width: $width) {
+
+                    @each $name,
+                    $size in $grid-gap-list-map {
+                        .d-grid.#{$class-gap}-#{$class}-#{$name} {
+                            gap: #{$size};
+
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@each $class,
+$width in $grid-media-map {
+
+    // Default class
+    @if $class==default {
+        @for $i from 1 through $col-amount {
+            @if $i==1 {
+                .#{$class-site-wrap} .d-grid.g-#{$class-column}-#{$i} {
+                    grid-template-columns: 100%;
+                }
+            }
+
+            @else {
+                .#{$class-site-wrap} .d-grid.g-#{$class-column}-#{$i} {
+                    grid-template-columns: repeat($i, 1fr);
+                }
+            }
+
+            .#{$class-site-wrap} .d-grid>.g-#{$class-column}-span-#{$i} {
+                grid-column: span $i;
+            }
+        }
+
+    }
+
+    // Media class
+    @else {
+        @media (min-width: $width) {
+            @for $i from 1 through $col-amount {
+                @if $i==1 {
+                    .#{$class-site-wrap} .d-grid.g-#{$class-column}-#{$class}-#{$i} {
+                        grid-template-columns: 100%;
+                    }
+                }
+
+                @else {
+                    .#{$class-site-wrap} .d-grid.g-#{$class-column}-#{$class}-#{$i} {
+                        grid-template-columns: repeat($i, 1fr);
+                    }
+                }
+
+                .#{$class-site-wrap} .d-grid>.g-span-#{$class}-#{$i} {
+                    grid-column: span $i;
+                }
+
+            }
+
+
+        }
+    }
+}

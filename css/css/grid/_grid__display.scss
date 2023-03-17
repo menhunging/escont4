@@ -1,0 +1,41 @@
+// Display
+@each $class,
+$width in $grid-media-map {
+
+    @if $class==default {
+        @each $display-name in $grid-display-map {
+            @if $display-name==flex {
+                .#{$class-site-wrap} .d-#{$display-name} {
+                    display: $display-name;
+                    flex-wrap: wrap;
+                }
+            }
+
+            @else {
+                .#{$class-site-wrap} .d-#{$display-name} {
+                    display: $display-name;
+                }
+            }
+
+        }
+    }
+
+    @else {
+        @media (min-width: $width) {
+            @each $display-name in $grid-display-map {
+                @if $class==flex {
+                    .#{$class-site-wrap} .d-#{$class}-#{$display-name} {
+                        display: $display-name;
+                        flex-wrap: wrap;
+                    }
+                }
+
+                @else {
+                    .#{$class-site-wrap} .d-#{$class}-#{$display-name} {
+                        display: $display-name;
+                    }
+                }
+            }
+        }
+    }
+}

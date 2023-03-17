@@ -1,0 +1,124 @@
+@each $key,
+$value in $text-color-map {
+    .#{$class-site-wrap} .t-#{$key} {
+        color: $value !important;
+    }
+}
+
+
+// Выравнивание текста
+@each $class,
+$width in $grid-media-map {
+
+    // Default class
+    @if $class==default {
+        @each $value in $text-align-map {
+            .#{$class-site-wrap} .t-#{$value } {
+                text-align: $value !important;
+            }
+        }
+    }
+
+    // Media class
+    @else {
+        @media (min-width: $width) {
+            @each $value in $text-align-map {
+                .#{$class-site-wrap} .t-#{$class}-#{$value } {
+                    text-align: $value !important;
+                }
+            }
+
+
+        }
+    }
+}
+
+// Размеры текстса
+@each $class,
+$width in $grid-media-map {
+
+    // Default class
+    @if $class==default {
+
+        @each $name,
+        $value in $text-size-map {
+            .#{$class-site-wrap} .t-#{$name} {
+                font-size: $value !important;
+            }
+        }
+    }
+
+    // Media class
+    @else {
+        @media (min-width: $width) {
+
+            @each $name,
+            $value in $text-size-map {
+                .#{$class-site-wrap} .t-#{$class}-#{$name } {
+                    font-size: $value !important;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+@each $key,
+$value in $text-weight-class-map {
+    .#{$class-site-wrap} .t-#{$key} {
+        // font-weight: $value !important;
+        font-weight: 600!important;
+    }
+}
+
+.#{$class-site-wrap} .t-decoration_no {
+    text-decoration: none;
+}
+
+.#{$class-site-wrap} .t-line-through {
+    text-decoration: line-through;
+}
+
+.#{$class-site-wrap} .t-no-wrap {
+    white-space: nowrap;
+}
+
+.#{$class-site-wrap} .t-uppercase {
+    text-transform: uppercase;
+}
+
+.#{$class-site-wrap} .t-link {
+    transition: $default-transition;
+    color: $color-main;
+    text-decoration: none;
+
+    &:hover,
+    &.active {
+        color: $color-main;
+
+    }
+
+    &_black {
+        color: $color-text;
+
+        &:hover,
+        &.active {
+            color: $color-main;
+        }
+    }
+
+    &_white {
+        color: white;
+        position: relative;
+
+        &:hover {
+            color: $color-main-hover;
+
+        }
+
+    }
+
+}

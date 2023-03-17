@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="css/style.min.css">
+    <meta name="description" content="Framework description">
+
+    <title>Framework map</title>
+</head>
+
+<body>
+
+    <div class="liper">
+        <div class="box">
+            <h2>Хлебные крошки</h2>
+            <p>Если последний элемент является тегом <code>a</code> то для атрибута задается javascript:void(0),
+                например <code>href="javascript:void(0)"</code>. Но
+                желательно заменять на тег <code data-copy="<span></span>">span</code> во избежание цикличных
+                ссылок</p>
+
+            <div class="breadcrumbs p-3 bg-grey mb-3 mt-1">
+                <ul class="breadcrumbs__row" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <a href="#" class="breadcrumbs__link" itemprop="item" title="Home page">Home</a>
+                        <meta itemprop="name" content="Home">
+                        <meta itemprop="position" content="0">
+                    </li>
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <a href="#" class="breadcrumbs__link" itemprop="item" title="Category page">Category
+                            Lorem ipsum</a>
+                        <meta itemprop="name" content="Category">
+                        <meta itemprop="position" content="1">
+                    </li>
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <span class="breadcrumbs__link active" itemprop="item" title="You here">Page dolor sit
+                            amet consectetur adipisicing elit</span>
+                        <meta itemprop="name" content="Page">
+                        <meta itemprop="position" content="2">
+                    </li>
+                </ul>
+            </div>
+
+            <h3>Минимальная структура "Хлебных крошек"</h3>
+            <p>Стандартные классы:</p>
+            <ul>
+                <li><code>breadcrumbs</code> — класс по умолчанию для div обертки, не имеет css свойств по
+                    умолчанию</li>
+                <li><code>breadcrumbs__row</code> — класс по умолчанию для обертки элементов хлебных крошек, уже
+                    имеет css свойства</li>
+                <li><code>breadcrumbs__item</code> — класс по умолчанию для элемента хлебных крошек который
+                    содержит в себе тег <code>a</code>, имеет css свойства</li>
+                <li><code>breadcrumbs__link</code>— класс по умолчанию для ссылки в хлебных крошках, имеет css
+                    свойства</li>
+                <li><code> active</code>— класс по умолчанию для активного элемента в хлебных
+                    крошках, имеет css свойства</li>
+            </ul>
+            <br>
+            <div class="breadcrumbs ">
+                <ul class="breadcrumbs__row">
+                    <li class="breadcrumbs__item">
+                        <a href="#" class="breadcrumbs__link">Home</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <a href="#" class="breadcrumbs__link">Category
+                            Lorem ipsum</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__link active">Page dolor sit
+                            amet consectetur adipisicing elit</span>
+
+                    </li>
+                </ul>
+            </div>
+
+            <hr class="mt-4 mb-3">
+        </div>
+
+
+
+        <div class="box">
+            <h2>Пагинация</h2>
+            <p>Стандартные классы и структура пагинации:</p>
+            <ul>
+                <li><code>pagination</code> — обертка для всей пагинации</li>
+                <li><code>pagination__row</code> — класс для обертки всех элементов пагинации</li>
+                <li><code>pagination__item</code> — класс для обертки ссылки пагинации</li>
+                <li><code>pagination__link</code> — класс для ссылки пагинации</li>
+                <li><code>active</code> — класс по-умолчанию для активной ссылки пагинации, желательно заменять
+                    активный пункт пагинации на тег <code>span</code></li>
+                <li><code>pagination__link_skip</code> — класс модификатор для скрытых пунктов пагинации, по
+                    умолчанию они выводятся как многоточие <code>...</code>
+                </li>
+                <li><code>disabled</code> — класс по-умолчанию для отключения элемента пагинации, на этот класс
+                    Liper через JavaScript применит <code>event.preventDefault()</code>
+                </li>
+            </ul>
+            <div class="pagination mt-1">
+                <ul class="pagination__row d-flex ul-no-list">
+                    <li class="pagination__item">
+                        <span class="pagination__link active">1</span>
+                    </li>
+                    <li class="pagination__item">
+                        <a href="#" class="pagination__link">2</a>
+                    </li>
+                    <li class="pagination__item">
+                        <a href="#" class="pagination__link disabled">3</a>
+                    </li>
+                    <li class="pagination__item">
+                        <a href="#" class="pagination__link pagination__link_skip">...</a>
+                    </li>
+                    <li class="pagination__item">
+                        <a href="#" class="pagination__link">4</a>
+                    </li>
+                    <li class="pagination__item">
+                        <a href="#" class="pagination__link">5</a>
+                    </li>
+                    <li class="pagination__item">
+                        <a href="#" class="pagination__link">6</a>
+                    </li>
+                </ul>
+            </div>
+
+            <hr class="mt-4 mb-5">
+        </div>
+
+        <div class="box">
+            <h2>Data помощники</h2>
+            <p>Liper имеет помощников в виде data-атрибутов, которые позволяют не писать лишний код
+                для простых задач.</p>
+            <h3>События</h3>
+            <ul>
+                <li><code>data-event-click="название_cобытия"</code> — создает новое JavaScript событие для
+                    элемента при
+                    клике.
+                    Пример
+                    применения: подключение целей метрики на клик по телефону. Вешаем событие и инициализируем
+                    цель при
+                    нашем новом событии. Событий можно создавать сколько угодно и все с разными названиями.</li>
+                <li><code>data-event-off</code> — отключает стандартное событие элемента. Теперь не надо писать
+                    в JS файле доп код.</li>
+            </ul>
+
+            <p>data-атрибуты связанные с событиями можно использовать одновременно.</p>
+            <h3>Контроль срабатывания скриптов</h3>
+            <ul>
+                <li><code>data-script-on-w="768"</code> — запускает скрипт только на устройствах чей экран
+                    больше или
+                    равно 768px. Если используется этот атрибут то при событии <code>$(window).resize()</code>
+                    произойдет
+                    сброс всех состояний компонента</li>
+                <li><code>data-script-off-w="768"</code> — запускает скрипт только на устройствах чей экран
+                    меньше или
+                    равно 768px. Если используется этот атрибут то при событии <code>$(window).resize()</code>
+                    произойдет
+                    сброс всех состояний компонента</li>
+                <li><code>data-off="default-animation"</code> — отключает стандартные анимации которые были
+                    прикручены к элементу</li>
+                <li><code>data-speed="значение"</code> — задает время срабатывания стандартной анимации для
+                    Liper для компонента</li>
+            </ul>
+
+            <hr class="mt-4 mb-5">
+        </div>
+
+
+        <div class="box">
+            <h2>Универсальный "крестик"</h2>
+            <p>для того чтобы закрывать все что нужно и когда нужно в Liper есть универсальные data закрыватели
+            </p>
+            <p><code>data-close="my_div"</code> закроет любой div с атрибутом
+                <code>data-close-target="my_div"</code></p>
+            <p>Дополнительно доступны data помощники для событий</p>
+            <div data-close-target="my_div" class="border-grey p-3 mb-3">
+                <button data-close="my_div">X</button>
+            </div>
+
+            <hr class="mt-4 mb-5">
+        </div>
+
+        <div class="box">
+            <h2>Универсальная открывашка</h2>
+            <p>для того чтобы что то открыть, в Liper есть универсальный data атрибут который будет открывать
+                свою цель</p>
+            <p><code>data-open="container"</code> откроет любой div с атрибутом
+                <code>data-open-target="container"</code> </p>
+            <p><code>data-off="default-animation"</code> отключает стандартные эфекты Liper у компонента</p>
+
+            <div data-open-target="container" data-close-target="container" class="border-grey p-3 d-none mb-3">
+                Открыли например модальное окно
+                <button data-close="container">X</button>
+                <button data-close="container" data-off="default-animation">X</button>
+
+            </div>
+            <button data-open="container" data-event-click="openContainer">Open</button>
+            <button data-open="container" data-off="default-animation">Open not fadeIn</button>
+
+            <hr class="mt-4 mb-5">
+        </div>
+
+        <div class="box">
+            <h2>Модальные окна</h2>
+            <p>Модальные окна открываются и закрываются с помощью "универсальной открывашки и крестика", но для
+                них дополнительно можно задать параметры</p>
+            <button class="btn btn_main" data-open="modal_1">Открыть модальное окно</button>
+
+            <div class="modal__wrap d-none" data-open-target="modal_1" data-close-target="modal_1"
+                data-close="notThisArea">
+                <div class="modal__container">
+                    <div class="modal__body p-2" data-close="notThis">
+                        <div class="modal__top d-flex items-x-end">
+                            <button data-close="modal_1">X</button>
+                        </div>
+                        <div class="modal__content mt-4 mb-2">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, exercitationem.
+                            Nihil, non sequi quidem eligendi mollitia asperiores recusandae labore obcaecati,
+                            itaque illum totam fuga ex vel reprehenderit, dolorum veniam. Voluptatibus?
+                        </div>
+                        <div class="modal__bottom d-flex items-x-end ">
+                            <button class="btn btn_main btn_small" data-open="modal_2">open
+                                modal</button>
+                            <button class="btn btn_outline error btn_small" data-close="modal_1">Close
+                                modal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal__wrap d-none" data-open-target="modal_2" data-close-target="modal_2"
+                data-close="notThisArea">
+                <div class="modal__container">
+                    <div class="modal__body p-2">
+                        <div class=" modal__top d-flex items-x-end">
+                            <button data-close="modal_2">X</button>
+                        </div>
+                        <div class="modal__content mt-4 mb-2">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, exercitationem.
+                            Nihil, non sequi quidem eligendi mollitia asperiores recusandae labore obcaecati,
+                            itaque illum totam fuga ex vel reprehenderit, dolorum veniam. Voluptatibus?
+                        </div>
+                        <div class="modal__bottom d-flex items-x-end ">
+                            <button class="btn btn_outline error btn_small" data-close="modal_2">Close
+                                modal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="mt-4 mb-5">
+        </div>
+
+
+        <div class="box">
+            <h2>Переключатели / Табы</h2>
+            <div class="tabs" data-tabs="wrap" data-speed="600">
+                <div class="tabs__btn-wrap">
+                    <button class="tabs__btn" data-tabs="btn">Переключатель с тегом button</button>
+                    <div class="tabs__btn disabled" data-tabs="btn">Переключатель с тегом div</div>
+                    <a href="#" class="tabs__btn" data-tabs="btn">Переключатель с тегом a</a>
+                    <span class="tabs__btn" data-tabs="btn">Переключатель с тегом span</span>
+                </div>
+                <div class="tabs__item-wrap">
+                    <div class="tabs__item d-none" data-tabs="item">
+                        <div class="tabs__content">
+                            1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, perspiciatis rem
+                            dolorum tempora doloribus vitae recusandae exercitationem. Maiores, rerum sunt quasi
+                            inventore cum recusandae repellendus. Similique corporis dignissimos quibusdam
+                            assumenda.
+                        </div>
+                    </div>
+                    <div class="tabs__item d-none" data-tabs="item">
+                        <div class="tabs__content">
+                            2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, perspiciatis rem
+                            dolorum tempora doloribus vitae recusandae exercitationem. Maiores, rerum sunt quasi
+                            inventore cum recusandae repellendus. Similique corporis dignissimos quibusdam
+                            assumenda.
+                        </div>
+                    </div>
+                    <div class="tabs__item d-none" data-tabs="item">
+                        <div class="tabs__content">
+                            3 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque ipsa ipsam
+                            dolorem,
+                            error, repellendus quidem beatae illo quos nesciunt non, labore debitis iste ex quo
+                            eum laudantium minus? Laborum, aspernatur.
+                        </div>
+                    </div>
+                    <div class="tabs__item d-none" data-tabs="item">
+                        <div class="tabs__content">
+                            4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, perspiciatis rem
+                            dolorum tempora doloribus vitae recusandae exercitationem. Maiores, rerum sunt quasi
+                            inventore cum recusandae repellendus. Similique corporis dignissimos quibusdam
+                            assumenda.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="mt-4 mb-5">
+        </div>
+
+        <div class="box">
+            <h2 data-event-click="na_zagolovok">Универсальный аккордеон</h2>
+            <p>Для запуска аккордeона необходимо создать минимальную структуру html и добавить тегам следующие
+                data-атрибуты
+            </p>
+            <ul data-event-click="na_zagolovok">
+                <li><code>data-accordion="parent"</code> — для обертки аккордеона;</li>
+                <li><code>data-accordion="group"</code> — для группы аккоредона</li>
+                <li><code>data-accordion="button"</code> — для кнопки аккордеона</li>
+                <li><code>data-accordion="content"</code> — для обертки контента внутри аккордeона</li>
+            </ul>
+            <p>Пример минимальной структуры:</p>
+            <p><i>...пример с редактором и copy надо оформить...</i></p>
+
+
+
+            <div data-accordion="parent">
+                <div data-accordion="group">
+                    <button data-accordion="button">Кнопка
+                        аккордeона</button>
+                    <!--Класс d-none просто добавляет display: none; при использовании сетки Liper-->
+                    <div data-accordion="content" class="d-none">
+                        <div class="p-3">
+                            <div data-accordion="parent">
+                                <div data-accordion="group">
+                                    <div> Тут <a href="#">ссылка рабочая</a>
+                                        <button data-accordion="button">а тут рядом кнопка
+                                            аккордeона</button>
+                                    </div>
+                                    <!--Класс d-none просто добавляет display: none; при использовании сетки Liper-->
+                                    <div data-accordion="content" class="d-none">
+                                        <div class="p-3">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum fuga
+                                            a ipsum
+                                            nam
+                                            ut dignissimos
+                                            sed accusantium unde, labore vel eum veritatis rerum, laudantium
+                                            voluptatum
+                                            ex
+                                            cupiditate quae
+                                            obcaecati itaque.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-accordion="group">
+                                    <div data-accordion="button">Кнопка
+                                        аккордeона с помощью тега div </div>
+                                    <!--Класс d-none просто добавляет display: none; при использовании сетки Liper-->
+                                    <div data-accordion="content" class="d-none">
+                                        <div class="p-3">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum fuga
+                                            a ipsum
+                                            nam
+                                            ut dignissimos
+                                            sed accusantium unde, labore vel eum veritatis rerum, laudantium
+                                            voluptatum
+                                            ex
+                                            cupiditate quae
+                                            obcaecati itaque.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-accordion="group">
+                                    <a href="#" data-accordion="button" data-event-off>Кнопка
+                                        аккордeона с помощью тега a</a>
+                                    <!--Класс d-none просто добавляет display: none; при использовании сетки Liper-->
+                                    <div data-accordion="content" class="d-none">
+                                        <div class="p-3">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum fuga
+                                            a ipsum
+                                            nam
+                                            ut dignissimos
+                                            sed accusantium unde, labore vel eum veritatis rerum, laudantium
+                                            voluptatum
+                                            ex
+                                            cupiditate quae
+                                            obcaecati itaque.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-accordion="group">
+                    <div data-accordion="button">Кнопка
+                        аккордeона с помощью тега div</div>
+                    <!--Класс d-none просто добавляет display: none; при использовании сетки Liper-->
+                    <div data-accordion="content" class="d-none">
+                        <div class="p-3">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum fuga a ipsum nam ut
+                            dignissimos
+                            sed accusantium unde, labore vel eum veritatis rerum, laudantium voluptatum ex
+                            cupiditate
+                            quae
+                            obcaecati itaque.
+                        </div>
+                    </div>
+                </div>
+                <div data-accordion="group">
+                    <a href="#" data-accordion="button" data-event-off>Кнопка
+                        аккордeона с помощью тега a</a>
+                    <!--Класс d-none просто добавляет display: none; при использовании сетки Liper-->
+                    <div data-accordion="content" class="d-none">
+                        <div class="p-3">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum fuga a ipsum nam ut
+                            dignissimos
+                            sed accusantium unde, labore vel eum veritatis rerum, laudantium voluptatum ex
+                            cupiditate
+                            quae
+                            obcaecati itaque.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <p>По умолчанию аккордеон возращает следующие события:</p>
+            <ul>
+                <li><code>accordion-open-start</code> — начало открытия группы аккордеона;</li>
+                <li><code>accordion-open-finish</code> — конец открытия группы аккордеона;</li>
+                <li><code>accordion-close-start</code> — у группы аккордеона началось закрытие</li>
+                <li><code>accordion-close-finish</code> — у группы аккордеона закончилось закрытие</li>
+            </ul>
+            <p>Это может пригодиться если нужна создавать взаимосвязи с другими элементами на странице или
+                делать более
+                сложные анимации.</p>
+            <div class="accordion mb-3" data-accordion="parent">
+                <div class="accordion__group" data-accordion="group">
+                    <button class="accordion__btn" data-accordion="button">Кнопка аккордeона</button>
+                    <div class="accordion__content-wrap" data-accordion="content">
+                        <div class="accordion__content">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum fuga a ipsum nam ut
+                            dignissimos
+                            sed accusantium unde, labore vel eum veritatis rerum, laudantium voluptatum ex
+                            cupiditate
+                            quae
+                            obcaecati itaque.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion__group" data-accordion="group">
+                    <button class="accordion__btn" data-accordion="button">Кнопка аккордeона</button>
+                    <div class="accordion__content-wrap" data-accordion="content">
+                        <div class="accordion__content">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum fuga a ipsum nam ut
+                            dignissimos
+                            sed accusantium unde, labore vel eum veritatis rerum, laudantium voluptatum ex
+                            cupiditate
+                            quae
+                            obcaecati itaque.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>Если нужно прерывать стандартное действие кнопки аккоредона, например в форме, то можно добавить
+                атрибут
+                для
+                кнопки
+                <code>data-event-off</code>, чтобы не отправлять форму. Ну или вместо стандартного
+                <code>button</code> использовать <code>
+                    div
+                </code></p>
+            <p>Этот атрибут универсальный для всех и отключает стандартные действия у любого элемента на
+                странице,
+                который
+                имеет подобный атрибут</p>
+            <hr class="mt-4 mb-2">
+
+            <h3>Аккордеон с доп атрибутами</h3>
+            <p>Этот аккордеон имеет атрибут <code>data-accordion-toggle="no"</code>, если его задать то соседние
+                элементы не будут сворачиваться.</p>
+            <p>Второй атрибут <code>data-speed="600"</code> позволяет поменять скорость анимации,
+                стандартная
+                400,
+                т.е 0.4s
+            </p>
+            <p>Допом стоит <code>data-width-activate="768"</code>, универсальный атрибут который запустит фукцию
+                только
+                на
+                устройствах с шириной экрана меньше или равно 768px</p>
+
+            <div class="accordion" data-accordion="parent" data-accordion-toggle="no" data-speed="600"
+                data-width-activate="768">
+                <div class="accordion__group" data-accordion="group">
+                    <button class="accordion__btn" data-accordion="button">Кнопка аккордeона</button>
+                    <div class="accordion__content-wrap" data-accordion="content">
+                        <div class="accordion__content">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum fuga a ipsum nam ut
+                            dignissimos
+                            sed accusantium unde, labore vel eum veritatis rerum, laudantium voluptatum ex
+                            cupiditate
+                            quae
+                            obcaecati itaque.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion__group" data-accordion="group">
+                    <button class="accordion__btn" data-accordion="button">Кнопка аккордeона</button>
+                    <div class="accordion__content-wrap" data-accordion="content">
+                        <div class="accordion__content">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum fuga a ipsum nam ut
+                            dignissimos
+                            sed accusantium unde, labore vel eum veritatis rerum, laudantium voluptatum ex
+                            cupiditate
+                            quae
+                            obcaecati itaque.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="mt-4 mb-5">
+        </div>
+
+        <div class="box">
+            <h2>Текстовые элементы</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque necessitatibus quidem quo cum
+                nobis
+                illo
+                mollitia adipisci tempore vel? Perspiciatis, corporis sit. Tempore tenetur atque magni quos!
+                Pariatur,
+                quos
+                animi.</p>
+            <p><q>Выбери себе работу по душе, и тебе не придется работать ни одного дня в своей жизни</q>
+            </p>
+
+            <h1>H1 title</h1>
+            <h2>H2 title</h2>
+            <h3>H3 title</h3>
+            <h4>H4 title</h4>
+
+            <p>Абзац внтури которого есть <b>жирное выделение </b><i>и наклоненный текст,</i>а также <a
+                    href="#">ссылка</a>.
+                У всех у них <code>:not(class)</code>.
+            </p>
+            <p>Элементы списка <code>:not(class)</code></p>
+            <ul>
+                <li>1 элемент ul </li>
+                <li>2 элемент ul </li>
+                <li>3 элемент ul
+                    <ul>
+                        <li>1 элемент ul </li>
+                        <li>2 элемент ul </li>
+                        <li>3 элемент ul
+
+                        </li>
+                        <li>4 элемент ul </li>
+                        <li>5 элемент ul </li>
+                    </ul>
+                </li>
+                <li>4 элемент ul </li>
+                <li>5 элемент ul </li>
+            </ul>
+            <ol>
+                <li>элемент ol</li>
+                <li>элемент ol</li>
+                <li>элемент ol
+                    <ol>
+                        <li>элемент ol</li>
+                        <li>элемент ol</li>
+                        <li>элемент ol</li>
+                        <li>элемент ol</li>
+                        <li>элемент ol</li>
+                    </ol>
+                </li>
+                <li>элемент ol</li>
+                <li>элемент ol</li>
+            </ol>
+            <hr class="mt-4 mb-3">
+            <div data-searchTag="table" data-searchTag-addClass="table">
+                <h3>Таблица :not(class)</h3>
+                <p>Для автоматического "заворачивания" таблицы в div, нужно поставить атрибуты
+                    <code>data-searchTag="table"</code> и
+                    <code>data-searchTag-addClass="нужное_название_класса"</code> для родителя блока в которой
+                    находится
+                    таблица. Скрипт
+                    автоматически найдет таблицу, завернет ее в div и добавит указанный класс для div. </p>
+                <p>Этот div нужен для появления полосы прокрутки если контент таблицы выходит за рамки
+                    контейнера,
+                    например
+                    на
+                    смартфонах.Стандартное название класса div`а-обертки <code>"table-wrap"</code>.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Заголовок таблицы №1</th>
+                            <th>Заголовок таблицы №2</th>
+                            <th>Заголовок таблицы №3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Колокнка таблицы №1</td>
+                            <td>Колокнка таблицы №2</td>
+                            <td>Колокнка таблицы №3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr class="mt-1 mb-3">
+            <h3>Модификаторы текста</h3>
+        </div>
+
+
+
+
+        <div class="box mb-5">
+            <h2>Grid сетка</h2>
+            <div class="d-grid col-2 col-ws-3 col-wl-4 col-wxl-6 gap-30">
+                <div class="border-grey">column 1</div>
+                <div class="border-grey">column 2</div>
+                <div class="border-grey col-span-3">column 3</div>
+                <div class="border-grey">column 4</div>
+                <div class="border-grey">column 5</div>
+                <div class="border-grey">column 6</div>
+                <div class="border-grey">column 7</div>
+                <div class="border-grey">column 8</div>
+                <div class="border-grey">column 9</div>
+                <div class="border-grey">column 10</div>
+                <div class="border-grey">column 11</div>
+                <div class="border-grey">column 12</div>
+            </div>
+
+            <hr class="mt-3 mb-2">
+            <h2>Flex сетка</h2>
+            <div class="d-flex_row gap-30">
+                <div class="col-6 col-ws-4 col-wl-3 col-wxl-2 mb-3">
+                    <div class="border-grey">column 1</div>
+                </div>
+                <div class=" col-6 col-ws-4 col-wl-3 col-wxl-2 mb-3">
+                    <div class="border-grey">column 2</div>
+                </div>
+                <div class="col-6 col-ws-4 col-wl-3 col-wxl-2 mb-3">
+                    <div class="border-grey">column 3</div>
+                </div>
+                <div class="col-6 col-ws-4 col-wl-3 col-wxl-2 mb-3">column 4</div>
+                <div class="col-6 col-ws-4 col-wl-3 col-wxl-2 mb-3">column 5</div>
+                <div class="col-6 col-ws-4 col-wl-3 col-wxl-2 mb-3">column 6</div>
+                <div class="col-6 col-ws-4 col-wl-3 col-wxl-2 mb-3">column 7</div>
+                <div class="col-6 col-ws-4 col-wl-3 col-wxl-2 mb-3">column 8</div>
+                <div class="col-6 col-ws-4 col-wl-3 col-wxl-2 mb-3">column 9</div>
+                <div class="col-6 col-ws-4 col-wl-3 col-wxl-2 mb-3">column 10</div>
+                <div class="col-6 col-ws-4 col-wl-3 col-wxl-2 mb-3">column 11</div>
+                <div class="col-6 col-ws-4 col-wl-3 col-wxl-2 mb-3">column 12</div>
+            </div>
+        </div>
+
+        <div class="box mb-5">
+            <h2>Кнопки</h2>
+            <h3>Main кнопки</h3>
+            <button class="btn btn_main mb-3">кнопка main</button>
+            <button class="btn btn_main error mb-3">кнопка error</button>
+            <button class="btn btn_main warning mb-3">кнопка warning</button>
+            <button class="btn btn_main success mb-3">кнопка success</button>
+            <button class="btn btn_main disabled mb-3">кнопка disabled</button>
+
+            <hr>
+            <h3>Outline кнопки</h3>
+            <button class="btn btn_outline mb-3">кнопка outline</button>
+            <button class="btn btn_outline error mb-3">кнопка outline error</button>
+            <button class="btn btn_outline warning mb-3">кнопка outline warning</button>
+            <button class="btn btn_outline success mb-3">кнопка outline success</button>
+            <button class="btn btn_outline disabled mb-3">кнопка outline disabled</button>
+
+            <hr>
+            <h3>Модификаторы размера кнопок</h3>
+            <button class="btn btn_main btn_big">кнопка main большая</button>
+            <button class="btn btn_outline btn_big">кнопка outline большая</button>
+            <br>
+            <br>
+            <button class="btn btn_main btn_small">кнопка main маленькая</button>
+            <button class="btn btn_outline btn_small">кнопка outline маленькая</button>
+        </div>
+
+        <div class="box mb-5">
+            <h2>Формы</h2>
+            <p>Поле с телефоном имеет <code>type="tel"</code>, по этому атрибуту автоматически срабатывает маска
+                телефона
+            </p>
+            <form action="" data-form>
+                <div class="form-group mb-3">
+                    <input type="text" name="name" class="form-group__input-text" placeholder="Текстовое поле">
+                </div>
+                <div class="form-group mb-3">
+                    <input type="tel" name="phone" class="form-group__input-text" placeholder="Телефон">
+                </div>
+                <div class="form-group mb-3">
+                    <input type="text" name="phone" class="form-group__input-text error" placeholder="Поле с ошибкой">
+                </div>
+                <div class="form-group mb-3">
+                    <input type="text" name="phone" class="form-group__input-text warning"
+                        placeholder="Поле с предупреждением">
+                </div>
+                <div class="form-group mb-3">
+                    <input type="text" name="phone" class="form-group__input-text success"
+                        placeholder="Поле показывает успех">
+                </div>
+                <div class="form-group mb-3">
+                    <input type="text" name="phone" class="form-group__input-text disabled"
+                        placeholder="Поле заблокировано">
+                </div>
+                <div class="form-group mb-3">
+                    <textarea name="" rows="5" class="form-group__input-text" placeholder="Комментарий"></textarea>
+                </div>
+                <div class="form-group mb-3">
+                    <input type="password" name="password" class="form-group__input-text" placeholder="Пароль">
+                </div>
+                <div class="form-group mb-3">
+                    <input type="submit" name="phone" class="btn btn_main" value="Input submit">
+                </div>
+                <div class="form-group form-group_checkbox-group mb-3">
+                    <label for="this_name" class="form-group__fake-checkbox">
+                        Обычный чекбокс
+                        <input type="checkbox" name="this_name" id="this_name" class="d-none" checked
+                            autocomplete="off">
+                    </label>
+                </div>
+                <div class="form-group form-group_checkbox-group mb-3">
+                    <label for="this_name-2" class="form-group__fake-checkbox error">
+                        Чекбокс с ошибкой
+                        <input type="checkbox" name="this_name-2" id="this_name-2" class="d-none">
+                    </label>
+                </div>
+                <div class="form-group form-group_checkbox-group mb-3">
+                    <label for="this_name-3" class="form-group__fake-checkbox disabled">
+                        Чекбок отключен
+                        <input type="checkbox" name="this_name-3" id="this_name-3" class="d-none">
+                    </label>
+                </div>
+                <div class="form-group form-group_radio-group mb-3">
+                    <label for="radio_name-1" class="form-group__fake-radio">
+                        Radio стандартное
+                        <input type="radio" name="radio_name-1" id="radio_name-1" class="d-none">
+                    </label>
+                </div>
+                <div class="form-group form-group_radio-group mb-3">
+                    <label for="radio_name-2" class="form-group__fake-radio">
+                        Radio стандартное
+                        <input type="radio" name="radio_name-1" id="radio_name-2" class="d-none">
+                    </label>
+                </div>
+                <div class="form-group form-group_radio-group mb-3">
+                    <label for="radio_name-3" class="form-group__fake-radio disabled">
+                        Radio стандартное
+                        <input type="radio" name="radio_name-1" id="radio_name-3" class="d-none">
+                    </label>
+                </div>
+
+                <hr>
+                <div class="form-group form-group_radio-group mt-1 mb-3">
+                    <label for="radio_name-4" class="form-group__fake-radio">
+                        Radio стандартное
+                        <input type="radio" name="radio_name-2" id="radio_name-4" class="d-none">
+                    </label>
+                </div>
+                <div class="form-group form-group__radio-group mb-3">
+                    <label for="radio_name-5" class="form-group__fake-radio">
+                        Radio стандартное
+                        <input type="radio" name="radio_name-2" id="radio_name-5" class="d-none">
+                    </label>
+                </div>
+                <div class="form-group form-group__select-group">
+
+                    <div class="form-group__fake-select__result">
+
+                    </div>
+
+                    <div class="form-group__fake-select__option">
+
+                        <ul class="form-group__fake-select__option__list">
+                            <li class="form-group__fake-select__option__list-item">
+                                val-1
+                            </li>
+                            <li class="form-group__fake-select__option__list-item">
+                                val-2
+                            </li>
+                            <li class="form-group__fake-select__option__list-item">
+                                val-3
+                            </li>
+                            <li class="form-group__fake-select__option__list-item">
+                                val-4
+                            </li>
+                            <li class="form-group__fake-select__option__list-item">
+                                val-5
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <select name="name" id="" class="d--none">
+                        <option value="val-1">val-1</option>
+                        <option value="val-2">val-2</option>
+                        <option value="val-3">val-3</option>
+                        <option value="val-4">val-4</option>
+                        <option value="val-5">val-5</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="js/libs/jquery-3.6.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        $('code').on('click', function () {
+            var $tmp = $("<input>");
+            $("body").append($tmp);
+            $tmp.val($(this).text()).select();
+            document.execCommand("copy");
+            $tmp.remove();
+        })
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+.#{$class-site-wrap} .#{$class-breadcrumbs} {
+    font-size: $breadcrumbs-size;
+
+    &__row {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    &__item {
+        display: inline;
+    }
+
+    &__item:last-of-type &__link {
+        &::after {
+            content: none;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $color-grey;
+        font-size: 1em;
+        transition: $default-transition;
+
+        &.active {
+            cursor: default;
+            user-select: none;
+            color: $color-grey;
+
+            &::after {
+                content: none;
+            }
+        }
+
+        &:not(.active):hover {
+            color: $color-main;
+        }
+
+        &::after {
+            content: "\f101";
+            font-family: "Font Awesome 6 Free";
+            display: inline;
+            margin: 0 0.4em;
+            font-weight: 900;
+            font-size: 0.8em;
+            color: $color-grey;
+            opacity: 0.5;
+        }
+
+    }
+
+}

@@ -1,0 +1,131 @@
+// Color settings — Настройки цветов
+// Main color — Основные цвета
+//$color-main: #117D71;
+$color-main: #0BA13D;
+$color-main-dop:#FAC000;
+$color-main-hover: #FAC000;
+$color-main-hover-light: rgb(201, 201, 255);
+$color-main-light: #E3EDFF;
+$color-text: #000;
+$color-text-light: #7A7E82;
+$color-text-visited: #123A7C;
+
+// Additional color — Дополнительные цвета
+$color-grey: #545454;
+$color-grey-hover: grey;
+$color-grey-dark: grey;
+$color-grey-light: #E0E0E0;
+
+// Color status — Цвета статусов
+$color-error: red;
+$color-error-hover: red;
+$color-error-light: rgb(255, 207, 207);
+$color-warning: yellow;
+$color-warning-hover: yellow;
+$color-warning-light: rgb(255, 255, 174);
+$color-success: green;
+$color-success-hover: green;
+$color-success-light: rgb(191, 255, 191);
+$color-disabled: grey;
+$color-disablde-light: rgb(220, 220, 220);
+
+// Grid settings — Настройки для сетки
+// Колличество колонок нужных в работе
+$col-amount: 12;
+// Колличество размеров для класса m-'название', измеряется в em. Назначить нужные можно в $grid-margin-map
+$margin-amount: 6;
+// Колличество размеров для класса p-'название', измеряется в em. Назначить нужные можно в $grid-padding-map
+$padding-amount: 6;
+
+$margin-padding-map: ('0': 0, '1': 0.3em, '2': 0.5em, '3': 1em, '4': 2em, '5': 3em, '6': 4em, '7': 5em, '8': 6em);
+
+$default-line-height: 1.5;
+$default-transition: 0.4s;
+
+// В основном это размеры для media запросов и максимальной ширины .box
+$w-xxl: 1500px;
+$w-xl: 1250px;
+$w-l: 1024px;
+$w-m: 768px;
+$w-sm: 640px;
+$w-s: 540px;
+$w-xs: 380px;
+// default обязательно. Ключ это название класса когда начинать изменяь элементы, значение уже указывает на какой ширине сайта это делать
+$grid-media-map: (default: default, wxs: $w-xs, ws: $w-s, wsm: $w-sm, wm: $w-m, wl: $w-l, wxl: $w-xl, wxxl: $w-xxl);
+
+//Настройки отсутпов у колонок. Ключ это название для класса gap-'название', значение определяет размер padding: 0 'значение'
+$grid-gap-list-map: ('10': 10px, '20': 20px, '30': 30px, '40': 40px);
+// default обязательно, остальное это на какой ширине макета нужны классы для смены расстояния между колонками .col-
+$grid-gap-media-map: (default, $w-m, $w-l);
+
+// перечисление классов для d-{название класса}, задает display: 'название'. При использовании с d-wm-none скроет на ширине указанной в переменной $w-m
+$grid-display-map: (grid, block, flex, inline-block, none);
+// перечисление классов для модификатора margin
+$grid-margin-map: (m: 'margin', mt: 'margin-top', mr: 'margin-right', mb: 'margin-bottom', ml: 'margin-left');
+// 
+$grid-padding-map: (p: 'padding', pt: 'padding-top', pr: 'padding-right', pb: 'padding-bottom', pl: 'padding-left');
+
+// Настройки для модификатаро border-r-*, задает свойство border-radius.
+$grid-border-map: ('1': 10px, '2': 15px, '3': 30px, '4': 40px, '100': 100%);
+// Настройки для изменения border-r-{media-класс}-*, можно поменять border-radius в зависимости от ширины экрана. Например border-r-wm-*.
+$grid-border-media-map: (default: default, wm: $w-m, wl: $w-l);
+// Настройка классов и цветов для border-{название класса с цветом}, задает свойство border-color.
+$grid-bordr-color-map: ('grey': $color-grey-light, 'main': $color-main);
+
+// Text settings — настройки для текста
+$text-line-height: 1.5;
+$t_size_m: 18px;
+$t_size_m__mobile: 15px;
+// Все что относится к текстовым мапам начинается с t-'класс'
+$text-weight-class-map: ('400': 400, '500': 500, '600': 600, '700': 700);
+$text-color-map: ('black': $color-text, 'grey': $color-text-light, 'main': $color-main, 'white': white, 'green': $color-main-dop);
+$text-align-map: (center, left, right);
+$text-size-map: ('xxs': 0.77rem, 'xs': 0.8rem, 's': 0.88rem, 'm': 1rem, 'l': 1.22rem, 'xl': 1.83rem, 'xxl': 2.5rem, 'xxxl': 2.4rem, 'xxxxl': 3rem);
+// Все что относится к мапам фона начинаетсся с класса bg-'класс'
+$background-color-map: ('white': white, 'black': $color-text, 'grey': $color-grey-light, 'main': $color-main, 'main_dop': $color-main-dop, 'green': $color-main-dop);
+
+// Карта именования классов и цвета  кнопок. Стуркура:
+// ( 'название класса кнопки' (карта цветов для этого класса) )
+// default-color — цвет текста кнопки в состоянии покоя
+// hover-color — цвет текста кнопки при наведении
+// default-background — цвет фона и border кнопки в состоянии покоя, если указать 'transparent' вместо цвета то border примет цвет текста
+// hover-background — цвет фона и border кнопки при наведении
+$btnClass-map: ('main': ('default-color': white, 'hover-color': white, 'default-background': $color-main, 'hover-background': $color-main-dop),
+    'main-dop': ('default-color': #727272, 'hover-color': white, 'default-background': $color-grey-light, 'hover-background': $color-main-dop),
+    'white': ('default-color': $color-main, 'hover-color': white, 'default-background': white, 'hover-background': $color-main-hover),
+    'green': ('default-color': white, 'hover-color': white, 'default-background': $color-main-dop, 'hover-background': $color-main),
+    'outline': ('default-color': $color-main, 'hover-color': white, 'default-background': 'transparent', 'hover-background': $color-main),
+    'outline-green': ('default-color': $color-main-dop, 'hover-color': white, 'default-background': 'transparent', 'hover-background': $color-main-dop),
+    'outline-white': ('default-color': white, 'hover-color':$color-main, 'default-background': 'transparent', 'hover-background': white));
+
+// Размер шрифта для обычных кнопок
+$btn-fonts-size: 1em;
+// Размер шрифта для больших кнопок
+$btnBig-fonts-size: 1.1em;
+// Размер шрифта для маленьких кнопок
+$btnSmall-fonts-size: 0.7rem;
+// Отступы кнопки
+$btn-padding: 1em 1.5em;
+// Скругление кнопок
+$btn-border-radius: 10px;
+
+
+$pagination-size: 0.9em;
+$breadcrumbs-size: 0.9em;
+
+
+@mixin disabledClass {
+    &.#{$class-disabled} {
+        filter: grayscale(1);
+        opacity: 0.8;
+        cursor: auto;
+    }
+}
+
+@mixin btnReset {
+    outline: none;
+    border: none;
+    user-select: none;
+    cursor: pointer;
+    text-decoration: none;
+}

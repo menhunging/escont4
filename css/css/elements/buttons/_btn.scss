@@ -1,0 +1,114 @@
+@use "sass:map";
+
+.#{$class-site-wrap} .btn {
+    @include btnReset;
+    padding: $btn-padding;
+    border: 1px solid $color-main;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+    transition: $default-transition;
+    font-size: $btn-fonts-size;
+    border-radius: $btn-border-radius;
+
+    @each $btn-class,
+    $btn-map in $btnClass-map {
+
+
+        &_#{$btn-class} {
+            color: map.get($btn-map, 'default-color');
+
+
+            @if map.get($btn-map, 'default-background')=='transparent' {
+                border-color: map.get($btn-map, 'default-color');
+                background-color: transparent;
+
+            }
+
+            @else {
+                border-color: map.get($btn-map, 'default-background');
+                background-color: map.get($btn-map, 'default-background');
+
+            }
+
+            &:hover:not(.#{$class-disabled}) {
+                color: map.get($btn-map, 'hover-color');
+                background-color: map.get($btn-map, 'hover-background');
+                border-color: map.get($btn-map, 'hover-background');
+            }
+
+            &.#{$class-success} {
+
+                border-color: $color-success;
+
+                @if map.get($btn-map, 'default-background')=='transparent' {
+                    background-color: transparent;
+                    color: $color-success
+                }
+
+                @else {
+                    background-color: $color-success;
+                    color: white;
+                }
+
+
+                &:hover:not(.#{$class-disabled}) {
+                    background-color: $color-success-hover;
+                    border-color: $color-success-hover;
+                }
+            }
+
+            &.#{$class-warning} {
+
+                border-color: $color-warning;
+
+                @if map.get($btn-map, 'default-background')=='transparent' {
+                    background-color: transparent;
+                    color: $color-warning;
+                }
+
+                @else {
+                    background-color: $color-warning;
+                    color: $color-text;
+                }
+
+                &:hover:not(.#{$class-disabled}) {
+                    background-color: $color-warning-hover;
+                    border-color: $color-warning-hover;
+                }
+            }
+
+            &.#{$class-error} {
+
+                border-color: $color-error;
+
+                @if map.get($btn-map, 'default-background')=='transparent' {
+                    background-color: transparent;
+                    color: $color-error;
+                }
+
+                @else {
+                    background-color: $color-error;
+                    color: white;
+                }
+
+                &:hover:not(.#{$class-disabled}) {
+                    background-color: $color-error-hover;
+                    border-color: $color-error-hover;
+                }
+            }
+
+            @include disabledClass;
+        }
+
+    }
+
+    &_big {
+        font-size: $btnBig-fonts-size;
+    }
+
+    &_small {
+        font-size: $btnSmall-fonts-size;
+    }
+
+}
